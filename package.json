@@ -1,0 +1,20 @@
+{
+  "name": "vue3-bus",
+  "version": "1.0.0",
+  "description": "A friendly event bus for Vue3",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "event",
+    "eventBus"
+  ],
+  "author": "yuanshang",
+  "license": "MIT",
+  "dependencies": {
+    "mitt": "^2.1.0"
+  }
+}
