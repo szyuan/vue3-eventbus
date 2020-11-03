@@ -91,15 +91,28 @@ export default {
 ```
 
 ## Options 配置
+app.use(bus, options)
 ```js
 defaultOptions = {
-    // Access by instance
+    // Access by instance 是否挂载在全局
     global: true,
-    // Access by inject
-    inject: true
+    // Access by inject 是否provide
+    inject: true,
+    // 实例上挂载的名称
+    globalPropertyName: '$eventBus',
+    // 通过inject引入的名称
+    injectName: '$eventBus'
 }
-
+```
+**example**
+```js
+// main.js
 app.use(bus, {
-    inject: false
+    globalPropertyName: '$ev'
 })
+
+// Button.vue
+created() {
+    this.$ev.emit('click', {time: Date.now()})
+}
 ```
