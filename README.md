@@ -6,7 +6,7 @@
   <a href="https://www.npmjs.org/package/vue3-bus"><img src="https://img.shields.io/npm/v/vue3-bus.svg" alt="npm"></a>
 </p>
 
-# Vue3-Bus
+# Vue3-Eventbus
 
 Tiny event bus plugin for Vue3.
 
