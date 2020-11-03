@@ -4,13 +4,13 @@ Tiny event bus plugin for Vue3.
 
 ## Why 使用原因
 Vue3实例不再提供`$on`与`emit`函数，官方推荐引入外部工具实现，使用本插件可以让你更轻松的在Vue3中使用轻量且功能完善eventBus
+[不引入插件的用法](#native-usage-without-vue3\-bus)
 
 App instance dont't have `$on` and `$emit` methods anymore in Vue3.
 > Remove \$on, \$off and \$once instance methods. Vue instances no longer implement the event emitter interface. 
 > -- [active-rfcs/0020-events-api-change.md](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0020-events-api-change.md)
 
 So the RFC suggests using a third-party library instead. But you have to do some repetitive work for it. This tiny tool can solve this problem for you.
-
 
 ## Install 安装
 
@@ -65,7 +65,7 @@ export default {
 
 **Access by instance 通过实例访问**
 
-Don't have to import `vue3-bus`
+Don't need to import `vue3-bus`
 不需要import `vue3-bus`
 
 ```js
@@ -105,6 +105,7 @@ defaultOptions = {
 }
 ```
 **example**
+修改挂载在应用上的名称
 ```js
 // main.js
 app.use(bus, {
@@ -114,5 +115,64 @@ app.use(bus, {
 // Button.vue
 created() {
     this.$ev.emit('click', {time: Date.now()})
+}
+```
+|
+|
+|
+|
+|
+|
+|
+
+## Native usage without vue3-bus
+不使用vue3-bus插件的原生用法
+```js
+// bus.js
+// + + +
+export default {
+    on(){
+        // ...
+    }
+    off(){
+        // ...
+    }
+    emit(){
+        // ...
+    }
+}
+
+// main.js
+// +
+import $bus from './lib/helpers/bus.js'
+// +
+app.provide('$bus', $bus)
+// +
+app.config.globalProperties.$bus = $bus
+
+// Button.vue
+// +
+import { inject } from 'vue'
+setup() {
+    // import and inject in every component
+    // +
+    const $bus = inject('$bus')
+    $bus.emit('click')
+}
+
+// Panel.vue
+// +
+import { inject } from 'vue'
+setup() {
+    // +
+    const $bus = inject('$bus')
+    $bus.on('click')
+}
+
+// Page.vue
+import { inject } from 'vue'
+setup() {
+    const $bus = inject('$bus')
+    $bus.off('click')
 }
 ```
