@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://imgur.com/FDytx8i" width="200" height="200" alt="vue3-bus"
+  <img src="https://i.imgur.com/FDytx8i.png" width="200" height="200" alt="vue3-bus"
     style="border-radius:40px; opacity:0.8"
   >
   <br>
