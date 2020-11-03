@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://i.imgur.com/FDytx8i.png" width="200" height="200" alt="vue3-bus"
+  <img src="https://i.imgur.com/FDytx8i.png" width="200" height="200" alt="vue3-eventbus"
     style="border-radius:40px; opacity:0.8"
   >
   <br>
-  <a href="https://www.npmjs.org/package/vue3-bus"><img src="https://img.shields.io/npm/v/vue3-bus.svg" alt="npm"></a>
+  <a href="https://www.npmjs.org/package/vue3-eventbus"><img src="https://img.shields.io/npm/v/vue3-eventbus.svg" alt="npm"></a>
 </p>
 
 # Vue3-Eventbus
@@ -24,7 +24,7 @@ So the RFC suggests using a third-party library instead. But you have to do some
 
 
 ```sh
-$ npm install --save vue3-bus
+$ npm install --save vue3-eventbus
 ```
 
 ## Usage 用法
@@ -32,7 +32,7 @@ $ npm install --save vue3-bus
 
 ```js
 // import {createApp} from 'vue
-import eventBus from 'vue3-bus'
+import eventBus from 'vue3-eventbus'
 // const app = createApp(App)
 app.use(eventBus)
 
@@ -40,8 +40,8 @@ app.use(eventBus)
 **emit**
 ```js
 // Button.vue
-import bus from 'vue3-bus'
-// or: import { bus } from 'vue3-bus'
+import bus from 'vue3-eventbus'
+// or: import { bus } from 'vue3-eventbus'
 export default {
     setup() {
         // fire an event
@@ -52,7 +52,7 @@ export default {
 **listen/unlisten**
 ```js
 // Panel.vue
-import bus from 'vue3-bus'
+import bus from 'vue3-eventbus'
 export default {
     setup() {
        // listen to an event
@@ -73,8 +73,8 @@ export default {
 
 **Access by instance 通过实例访问**
 
-Don't need to import `vue3-bus`
-不需要import `vue3-bus`
+Don't need to import `vue3-eventbus`
+不需要import `vue3-eventbus`
 
 ```js
 export default {
@@ -133,8 +133,8 @@ created() {
 |
 |
 
-## Native usage without vue3-bus
-不使用vue3-bus插件的原生用法
+## Native usage without vue3-eventbus
+不使用vue3-eventbus插件的原生用法
 ```js
 // bus.js
 // + + +
