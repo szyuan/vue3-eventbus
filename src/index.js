@@ -1,10 +1,11 @@
 import mitt from 'mitt'
-
 const eventBus = mitt()
 
 const defaultOptions = {
     global: true,
-    inject: true
+    inject: true,
+    globalPropertyName: '$eventBus',
+    injectName: '$eventBus'
 }
 
 eventBus.install = install
@@ -17,10 +18,10 @@ function install(app, options) {
         ...options
     }
     if(opt.global) {
-        app.config.globalProperties.$eventBus = eventBus;
+        app.config.globalProperties[opt.globalPropertyName].$eventBus = eventBus;
     }
     if(opt.inject) {
-        app.provide('$eventBus', eventBus)
+        app.provide(opt.injectName, eventBus)
     }
     return eventBus
 }
