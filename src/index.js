@@ -18,7 +18,7 @@ function install(app, options) {
         ...options
     }
     if(opt.global) {
-        app.config.globalProperties[opt.globalPropertyName].$eventBus = eventBus;
+        app.config.globalProperties[opt.globalPropertyName] = eventBus;
     }
     if(opt.inject) {
         app.provide(opt.injectName, eventBus)
