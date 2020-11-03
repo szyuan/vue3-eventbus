@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="https://imgur.com/FDytx8i" width="200" height="200" alt="mitt"
+    style="border-radius:40px; opacity:0.8"
+  >
+  <br>
+  <a href="https://www.npmjs.org/package/vue3-bus"><img src="https://img.shields.io/npm/v/vue3-bus.svg" alt="npm"></a>
+</p>
+
 # Vue3-Bus
 
 Tiny event bus plugin for Vue3.
